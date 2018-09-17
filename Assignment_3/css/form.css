@@ -4,8 +4,11 @@
 body {
 	padding: 0 2rem;	
 	font: 1.5rem/1.4 'Open Sans', Helvetica, Arial, sans-serif;
-	background: #222222 url('images/txture.png') repeat top left;
-	color: #888888;
+	background-image: url('images/steve-halama-767819-unsplash.jpg');
+	background-color: #888888;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 h2, h3 { font-size: 2.4rem; }
