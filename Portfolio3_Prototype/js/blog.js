@@ -50,20 +50,47 @@ var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
     modal.style.display = "block";
-	 
 
-    	var weather1 = fetch('https://api.openweathermap.org/data/2.5/weather?q=Key Largo,us&APPID=f23ce7330ba3f39eaafdde4c3e827470')
-		.then((response)=> response.json()).then((data)=> console.log(data.main));
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function(){
 
-		// var weather2 = fetch('https://api.openweathermap.org/data/2.5/weather?q=Cedar Creek,us&APPID=f23ce7330ba3f39eaafdde4c3e827470')
-		// .then((response)=> response.json()).then((data)=> console.log(data));
-
-		// var weather3 = fetch('https://api.openweathermap.org/data/2.5/weather?q=Chattahoochee,us&APPID=f23ce7330ba3f39eaafdde4c3e827470')
-		// .then((response)=> response.json()).then((data)=> console.log(data));
-
-document.getElementsbyTagName("p")[0].innerHTML= data.main
+			var data = JSON.parse(xhr.responseText);
+			document.querySelectorAll('td')[0].innerHTML = data.name;
+			document.querySelectorAll('td')[1].innerHTML = Math.round(data.main.temp*.18+32)+" F";
+			document.querySelectorAll('td')[2].innerHTML = data.weather[0].main;
 
 
+		}
+
+
+		xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=Key Largo,us&APPID=f23ce7330ba3f39eaafdde4c3e827470', true);
+		xhr.send(null)
+///////////////////////////////////////////////////////////
+				var xhr2 = new XMLHttpRequest();
+				xhr2.onload = function(){
+
+					var data2 = JSON.parse(xhr2.responseText);
+					document.querySelectorAll('td')[3].innerHTML = data2.name;
+					document.querySelectorAll('td')[4].innerHTML = Math.round(data2.main.temp*.18+32)+" F";
+					document.querySelectorAll('td')[5].innerHTML = data2.weather[0].main;
+				}
+
+
+				xhr2.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=Cedar Creek,us&APPID=f23ce7330ba3f39eaafdde4c3e827470', true);
+				xhr2.send(null)
+/////////////////////////////////////////////////////////
+		var xhr3 = new XMLHttpRequest();
+		xhr3.onload = function(){
+
+			var data3 = JSON.parse(xhr3.responseText);
+			document.querySelectorAll('td')[6].innerHTML = data3.name;
+			document.querySelectorAll('td')[7].innerHTML = Math.round(data3.main.temp*.18+32)+" F";
+			document.querySelectorAll('td')[8].innerHTML = data3.weather[0].main;
+		}
+
+
+xhr3.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=Chattahoochee,us&APPID=f23ce7330ba3f39eaafdde4c3e827470', true);
+xhr3.send(null)
 }
 
 // When the user clicks on <span> (x), close the modal

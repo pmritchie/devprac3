@@ -228,4 +228,18 @@ button:active {
     cursor: pointer;
 }
 /* DROPDOWN MENU
-====================================================================== *
+====================================================================== */
+th {
+	line-height: 1;
+	float: left;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+td {
+	line-height: 1;
+	float: left;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
