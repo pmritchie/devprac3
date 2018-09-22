@@ -7,9 +7,12 @@ body {
 	background: #222222 url('images/txture.png') repeat top left;
 	color: #888888;
 }
+h1{
+	font-size: 2.4rem
+}
 
 h2, h3 {
-	font-size: 2.4rem;
+	font-size: 2rem;
 	color: #444444;
 }
 h2 {
@@ -130,7 +133,7 @@ dt::after {
 }
 dd {
 	border-radius: 2px;
-	position: absolute;
+	position: relative;
 	background: #dddddd;
 }
 
@@ -159,7 +162,7 @@ dd {
 
 /* LOAD MORE BUTTON 
 ====================================================================== */
-article + p { 
+/*article + p { 
 	clear: both; 
 	text-align: center;
 }
@@ -185,4 +188,98 @@ button:hover {
 button:active { 
 	background: #555555;
 	transform: scale(1.05);
+}*/
+/* MODAL
+===================================================================== */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* DROPDOWN MENU
+====================================================================== */
+/* Dropdown Button */
+.dropbtn {
+  display: block;
+	width: 100%;
+	padding: 1rem 2rem;
+	outline: none;
+	cursor: pointer;
+	color: #888888;
+	font-weight: 600;
+	border-radius: 2px;	
+	background: #222222;
+	transform-origin: center center;
+	transition: all 0.5s;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn::before { right: calc(100% + 2rem); }
+.dropbtn::after { left: calc(100% + 2rem); }
+.dropbtn:hover { 
+	background: #333333;
+	transform: scale(1.025); 
+}
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
