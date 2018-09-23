@@ -1,4 +1,4 @@
-document.querySelector("#blog h2").innerHTML = " ";
+document.querySelector("title").innerHTML = "Camping Sites";
 
 var xhr = new XMLHttpRequest();
 xhr.onload = function(){
@@ -93,11 +93,11 @@ xhr3.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=Chattahooche
 xhr3.send(null)
 }
 
-// When the user clicks on <span> (x), close the modal
+// close when user clicks the x button
 span.onclick = function() {
     modal.style.display = "none";
 }
-
+// closes window when user clicks outside of modal
 window.onclick = function(event){
 	if(event.target == modal) {
 		modal.style.display = "none";
